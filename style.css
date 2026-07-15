@@ -1,8 +1,4 @@
-/* ==========================================================
-   PhishShield AI — Design Tokens
-   Palette: deep space navy + electric blue→cyan signal gradient
-   Type: Space Grotesk (display) / Inter (body) / JetBrains Mono (data)
-   ========================================================== */
+
 
 :root {
     --bg: #070a12;
@@ -53,13 +49,7 @@ body {
     min-height: 100vh;
     padding-bottom: 40px;
     -webkit-font-smoothing: antialiased;
-    /* body{
-    background:
-        radial-gradient(circle at 15% 10%, rgba(47,107,255,.22) 0%, transparent 35%),
-        radial-gradient(circle at 85% 15%, rgba(34,211,238,.18) 0%, transparent 35%),
-        radial-gradient(circle at 50% 100%, rgba(124,58,237,.15) 0%, transparent 45%),
-        linear-gradient(135deg, #070a12 0%, #0b1120 45%, #060810 100%);
-} */
+  
 }
 
 a {
@@ -393,10 +383,8 @@ textarea:focus {
 
 .risk-badge.idle {
     background: var(--glass-strong);
-    /* color: var(--text-dim); */
     color: white;
     border: 1px solid var(--glass-border);
-    /* background-color: rgba(7, 198, 227, 0.4); */
     background: var(--accent-grad);
 
 
