@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishGuard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ============ TOP NAV ============ -->
+    <header class="topnav">
+        <div class="brand">
+            <span class="brand-mark">🛡</span>
+            <span class="brand-name">Phish<span>Guard</span> AI</span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="#" class="active">Dashboard</a>
+            <a href="#">Analysis</a>
+            <a href="#">History</a>
+        </nav>
+
+        <div class="avatar" aria-hidden="true"><span class="material-symbols-outlined">
+                account_circle
+            </span></div>
+    </header>
+
+    <!-- ============ MAIN ============ -->
+    <main class="layout">
+
+        <!-- Left column -->
+        <section class="col-main">
+
+            <div class="page-heading">
+                <h1>Phishing Email Detector</h1>
+                <p>Analyze suspicious emails using AI-powered phishing detection and behavioral heuristics to protect
+                    your digital identity.</p>
+            </div>
+
+            <div class="glass-card">
+                <div class="card-head">
+                    <span class="eyebrow">Email Analysis</span>
+                    <!-- <span class="pill">✉ Input Vector</span> -->
+                </div>
+
+                <textarea id="emailInput" placeholder="Paste your  email here…"></textarea>
+
+                <div class="textarea-tools">
+                    <button type="button" class="icon-btn" id="attachBtn" title="Attach (visual only)"><span
+                            class="material-symbols-outlined">
+                            attach_file_add
+                        </span></button>
+                    <button type="button" class="icon-btn" id="clearBtn" title="Clear input"><span
+                            class="material-symbols-outlined">delete</span></button>
+                </div>
+
+                <button class="scan-btn" onclick="checkEmail()">
+                    <span class="bolt"></span> Scan
+                </button>
+            </div>
+
+            <div class="anomalies-block">
+                <h2 class="section-title"><span class="dot">●</span> Anomalies Detected</h2>
+                <div id="anomaliesList" class="anomalies-list">
+                    <p class="empty-hint">Run a scan to surface anomalies here.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Right column -->
+        <aside class="col-side">
+
+            <div class="glass-card summary-card">
+                <div class="summary-top">
+                    <span id="riskBadge" class="risk-badge idle"> Awaiting Scan</span>
+                    <div class="confidence">
+                        <span class="label">Confidence Level</span>
+                        <span id="confidenceValue" class="value">—</span>
+                    </div>
+                </div>
+
+                <div class="risk-score-row">
+                    <span class="label">Aggregate Risk Score</span>
+                    <span id="riskPercent" class="big-percent">0%</span>
+                </div>
+
+                <div class="progress">
+                    <div id="progressBar" class="progress-bar" style="width:0%"></div>
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-box">
+                        <span class="stat-label"><span class="material-symbols-outlined">
+                                bar_chart
+                            </span> AI Probability</span>
+                        <span id="aiProbability" class="stat-value">0%</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label"><span class="material-symbols-outlined">
+                                link_2
+                            </span> Known Match</span>
+                        <span id="knownMatch" class="stat-value">None</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Total Words</span>
+                        <span id="totalWords" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Suspicious</span>
+                        <span id="suspiciousCount" class="stat-value danger-text">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Safe Tags</span>
+                        <span id="safeTags" class="stat-value safe-text">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Spam Score</span>
+                        <span id="spamScore" class="stat-value">0.0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card mitigation-card">
+                <h3 class="section-title">Mitigation Steps</h3>
+                <div id="mitigationGrid" class="mitigation-grid"></div>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- ============ MOBILE BOTTOM NAV ============ -->
+    <nav class="bottom-nav">
+        <a href="#" class="active"><span>🔍</span>Scan</a>
+        <a href="#"><span>🕘</span>History</a>
+        <a href="#"><span>🛡</span>Threats</a>
+        <a href="#"><span>⚙</span>Settings</a>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
