@@ -47,6 +47,7 @@
 ## 7. Author
 
 * Muhammad Hassan
+* * Syeda Manahil
 
 ## 8. License
 
